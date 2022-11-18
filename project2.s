@@ -41,6 +41,7 @@ jr $ra
 
 
 
+
 lb $t0, 3($s0)
 jal check
 lb $t0, 2($s0)
@@ -51,10 +52,15 @@ lb $t0, 0($s0)
 jal check
 	
 
+outOfBounds:
+j unrecognize 
+
+
 
 check:
 bgt $t0, 0, add_Character
 jr $ra
+
 
 add_Character:
 bgt $t0, 96, lowerCaseChar
