@@ -39,6 +39,14 @@ syscall
 
 
 
+
+Check_Character:
+beq $t1, 10, unrecognize
+bne $t1, $zero, unrecognize
+jr $ra
+
+
+
 #LowerCase loop 
 
 lowerCaseChar:
