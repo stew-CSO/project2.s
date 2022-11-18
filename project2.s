@@ -110,7 +110,13 @@ exitfunction:
 	la $a0, 44
 	syscall
 	
+	li $v0, 1
+	move $a0, $t9
+	syscall
 	
+	li $v0, 10
+	syscall
+
 
 
 
