@@ -6,6 +6,8 @@
 
 .data ##data section
 
+user_input: .asciiz ""
+
 result: .asciiz "Unrecognized Input" 
 input: .space 1001
 
@@ -23,8 +25,19 @@ la $a0, user_input
 li $a1, 1001
 syscall 
 
-move $s0, $a0  #move userInput into register $t0 
-lbu $s0, ($t0) #take the contents of memory, load it, and sign extend the result to 32 (or 64) bits.
+move $s0, $a0  #move userInput into register $s0 
+#lbu $s0, ($t0) #take the contents of memory, load it, and sign extend the result to 32 (or 64) bits.
+
+
+#LowerCase loop 
+
+lowerCaseChar:
+bgt $s1, 115, outOfBounds
+sub $s1, $s1, 87
+j addsloop
+
+outOfBounds:
+
 
 
 
@@ -37,7 +50,7 @@ addi $s0, $s0, 1
 beq $a0, 32, blank
 beq $a0, $zero, done 
 li $vo, 11
-system 
+syscall 
 j blank
 
 
