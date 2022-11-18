@@ -29,6 +29,15 @@ move $s0, $a0  #move userInput into register $s0
 #lbu $s0, ($t0) #take the contents of memory, load it, and sign extend the result to 32 (or 64) bits.
 
 
+lb $t0, 0($s0)
+beq $t0, 10, unrecognize
+
+
+unrecognize: 
+
+
+
+
 #LowerCase loop 
 
 lowerCaseChar:
