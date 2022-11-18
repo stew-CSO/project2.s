@@ -45,7 +45,10 @@ lb $t0, 3($s0)
 	jal check
 	lb $t0, 2($s0)
 	jal check
-	
+	lb $t0, 1($s0)
+	jal check
+	lb $t1, 0($t0)
+	jal check
 	
 
 
