@@ -27,12 +27,20 @@ move $t0, $a0  #move userInput into register $t0
 lbu $s0, ($t0) #take the contents of memory, load it, and sign extend the result to 32 (or 64) bits.
 
 
-la $a0, empty_string 
-li $a1, 1001
-move $t1, $a0
 
 #loop to remove blanks spaces 
 
-blankspaces:
-beq
+blank:
+
+lb $a0, 0($s0)
+addi $s0, $s0, 1
+beq $a0, 32, blank
+
+
+
+
+
+
+
+
 
