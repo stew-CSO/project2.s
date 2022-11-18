@@ -86,7 +86,13 @@ jr $ra
 base28:
 beq $t2, $t3, addLoop
 multu $t1, $t8
-mflo $t5
+mflo $t4
+mfhi $t5
+add $t2, $t4, $t5
+addi $t2, 1
+bne $t2, $t3, base28
+	
+
 
 
 
