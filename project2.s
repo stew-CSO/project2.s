@@ -36,7 +36,7 @@ jal Check_Character
 
 Check_Character:
 beq $t0, 10, unrecognize
-bne $t0, $zero, unrecognize
+bne $t0, $outOfBounds, unrecognize
 jr $ra
 
 
@@ -53,13 +53,15 @@ jal check
 
 
 check:
-bgt $t1, 0, add_Character
+bgt $t0, 0, add_Character
 jr $ra
 
 add_Character:
-	bgt $t0, 96, lowerCaseChar
-	bgt $t0, 64, upperCaseChar
-	bgt $t0, 47, num
+bgt $t0, 96, lowerCaseChar
+bgt $t0, 64, upperCaseChar
+bgt $t0, 47, num
+bne $t0, 10, outOfBounds
+jr $ra
 	
 
 
