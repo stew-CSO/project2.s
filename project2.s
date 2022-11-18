@@ -40,6 +40,14 @@ bne $t0, $zero, unrecognize
 jr $ra
 
 
+Check_Fourth:
+lb $t0, 3($s0)
+	jal check
+	lb $t0, 2($s0)
+	jal check
+	
+	
+
 
 
 #LowerCase loop 
