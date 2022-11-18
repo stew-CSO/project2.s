@@ -45,7 +45,10 @@ sub $s1, $s1, 55
 j addsloop
 
 
-
+num:
+bgt $s1, 59, outOfBounds  
+sub $s1, $s1, 48
+j addsloop 
 
 #loop to remove blanks spaces 
 
