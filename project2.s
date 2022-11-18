@@ -38,7 +38,7 @@ jal Check_Character
 
 Check_Character:
 beq $t0, 10, unrecognize
-bne $t0, $outOfBounds, unrecognize
+bne $t0, $zero, unrecognize
 jr $ra
 
 
