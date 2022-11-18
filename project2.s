@@ -17,3 +17,4 @@ main: # Start of code section
 li $v0, 8
 la $a0, result 
 li $a1, 1000
+syscall 
