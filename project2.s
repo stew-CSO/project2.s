@@ -142,22 +142,6 @@ bgt $s1, 59, outOfBounds
 sub $s1, $s1, 48
 j addsloop 
 
-#loop to remove blanks spaces 
-
-blank:
-
-lb $a0, 0($s0)
-addi $s0, $s0, 1
-beq $a0, 32, blank
-beq $a0, $zero, done 
-li $v0, 11
-syscall 
-j blank
-
-
-done:
-jr $ra 
-.data 
 
 
 
