@@ -56,7 +56,11 @@ check:
 bgt $t1, 0, add_Character
 jr $ra
 
-
+add_Character:
+	bgt $t0, 96, lowerCaseChar
+	bgt $t0, 64, upperCaseChar
+	bgt $t0, 47, num
+	
 
 
 
