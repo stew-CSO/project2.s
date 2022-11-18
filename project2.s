@@ -34,7 +34,12 @@ beq $t0, 10, unrecognize
 
 
 unrecognize: 
-
+la $a0, unrecognize
+li $v0, 4
+syscall
+	
+li $v0, 10
+syscall
 
 
 
