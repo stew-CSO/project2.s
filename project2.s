@@ -16,6 +16,8 @@ input: .space 1001
   
 main: # Start of code section
 
+addi $s5, 28
+
 li $v0, 8
 la $a0, input 
 li $a1, 1001
@@ -62,13 +64,30 @@ bgt $t0, 0, add_Character
 jr $ra
 
 
+
+
+#convert base number to decimal
+
+
+
 add_Character:
 bgt $t0, 96, lowerCaseChar
 bgt $t0, 64, upperCaseChar
 bgt $t0, 47, num
 bne $t0, 10, outOfBounds
 jr $ra
-	
+
+
+
+
+
+
+
+base28:
+beq $t2, $t3, addLoop
+multu $t1, $t8
+mflo $t5
+
 
 
 
