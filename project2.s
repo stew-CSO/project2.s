@@ -106,6 +106,10 @@ exitfunction:
 	add $a0, $t3, $zero
 	syscall
 	
+	li $v0, 11
+	la $a0, 44
+	syscall
+	
 	
 
 
