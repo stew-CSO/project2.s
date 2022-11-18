@@ -16,12 +16,8 @@ input: .space 1001
   
 main: # Start of code section
 
-li $v0, 4
-la $a0, prompt 
-syscall 
-
 li $v0, 8
-la $a0, user_input 
+la $a0, input 
 li $a1, 1001
 syscall 
 
