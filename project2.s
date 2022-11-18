@@ -14,6 +14,10 @@ input: .space 1001
   
 main: # Start of code section
 
+li $v0, 4
+la $a0, prompt 
+syscall 
+
 li $v0, 8
 la $a0, user_input 
 li $a1, 1001
@@ -21,4 +25,14 @@ syscall
 
 move $t0, $a0  #move userInput into register $t0 
 lbu $s0, ($t0) #take the contents of memory, load it, and sign extend the result to 32 (or 64) bits.
+
+
+la $a0, empty_string 
+li $a1, 1001
+move $t1, $a0
+
+#loop to remove blanks spaces 
+
+blankspaces:
+beq
 
