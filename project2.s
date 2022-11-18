@@ -29,21 +29,16 @@ lb $t0, 0($s0)
 beq $t0, 10, unrecognize
 
 
-unrecognize: 
-la $a0, unrecognize
-li $v0, 4
-syscall
-	
-li $v0, 10
-syscall
-
+lb $t0, 5($s0)
+jal Check_Character
 
 
 
 Check_Character:
-beq $t1, 10, unrecognize
-bne $t1, $zero, unrecognize
+beq $t0, 10, unrecognize
+bne $t0, $zero, unrecognize
 jr $ra
+
 
 
 
@@ -84,6 +79,18 @@ j blank
 done:
 jr $ra 
 .data 
+
+
+
+unrecognize: 
+la $a0, unrecognize
+li $v0, 4
+syscall
+	
+li $v0, 10
+syscall
+
+
 
 
 
