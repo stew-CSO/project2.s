@@ -42,14 +42,22 @@ jr $ra
 
 
 lb $t0, 3($s0)
-	jal check
-	lb $t0, 2($s0)
-	jal check
-	lb $t0, 1($s0)
-	jal check
-	lb $t0, 0($s0)
-	jal check
+jal check
+lb $t0, 2($s0)
+jal check
+lb $t0, 1($s0)
+jal check
+lb $t0, 0($s0)
+jal check
 	
+
+
+check:
+bgt $t1, 0, add_Character
+jr $ra
+
+
+
 
 
 #LowerCase loop 
