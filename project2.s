@@ -23,7 +23,7 @@ la $a0, user_input
 li $a1, 1001
 syscall 
 
-move $t0, $a0  #move userInput into register $t0 
+move $s0, $a0  #move userInput into register $t0 
 lbu $s0, ($t0) #take the contents of memory, load it, and sign extend the result to 32 (or 64) bits.
 
 
@@ -40,6 +40,10 @@ li $vo, 11
 system 
 j blank
 
+
+done:
+jr $ra 
+.data 
 
 
 
