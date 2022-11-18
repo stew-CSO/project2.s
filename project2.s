@@ -35,6 +35,11 @@ blank:
 lb $a0, 0($s0)
 addi $s0, $s0, 1
 beq $a0, 32, blank
+beq $a0, $zero, done 
+li $vo, 11
+system 
+j blank
+
 
 
 
