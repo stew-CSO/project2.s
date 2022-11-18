@@ -80,11 +80,8 @@ jr $ra
 
 
 
-
-
-
 base28:
-beq $t2, $t3, addLoop
+beq $t2, $t3, addsLoop
 multu $t1, $t8
 mflo $t4
 mfhi $t5
@@ -94,7 +91,11 @@ bne $t2, $t3, base28
 	
 
 
-
+addsLoop:
+sub $t2, $t2, $t2
+add $t9, $t1, $t9
+addi $t3, 1
+jr $ra
 
 
 #LowerCase loop 
