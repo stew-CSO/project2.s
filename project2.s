@@ -62,9 +62,6 @@ lb $t0, 3($s0)
 
 
 
-
-
-
 bgt $t2, 4, unrecognize 
 j exitfunction	
 
@@ -80,9 +77,6 @@ Check_Character:
 	jal beginning_loop
 
 
-trailing:
-	bne $t3, 0, unrecognized
-	jal beginning_loop
 
 
 add_Character:
@@ -92,6 +86,10 @@ add_Character:
 	beq $t0, 9, trailing 
 	beq $t0, 32, trailing 
 	bne $t0, 10, outOfBounds
+	jal beginning_loop
+
+trailing:
+	bne $t3, 0, unrecognize
 	jal beginning_loop
 
 
@@ -112,7 +110,7 @@ addsLoop:
 	sub $t2, $t2, $t2
 	add $t9, $t0, $t9
 	addi $t3, 1
-	bgt $t3, $s4, unrecognized
+	bgt $t3, $s4, unrecognize
 	beq $t7, $t1, exitfunction 
 	jal beginning_loop
 
@@ -134,8 +132,6 @@ exitfunction:
 	
 	li $v0, 10
 	syscall
-
-
 
 
 
