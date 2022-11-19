@@ -24,7 +24,7 @@ li $a1, 1001
 syscall 
 
 move $s0, $a0  #move userInput into register $s0 
-#lbu $s0, ($t0) #take the contents of memory, load it, and sign extend the result to 32 (or 64) bits.
+
 
 
 lb $t0, 0($s0)
@@ -141,7 +141,7 @@ j base28
 
 
 unrecognize: 
-la $a0, unrecognize
+la $a0, result
 li $v0, 4
 syscall
 	
