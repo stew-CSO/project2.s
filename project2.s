@@ -36,13 +36,6 @@ jal Check_Character
 
 
 
-Check_Character:
-beq $t0, 10, unrecognize
-bne $t0, $zero, unrecognize
-jr $ra
-
-
-
 
 lb $t0, 3($s0)
 jal check
@@ -64,9 +57,10 @@ bgt $t0, 0, add_Character
 jr $ra
 
 
-
-
-#convert base number to decimal
+Check_Character:
+beq $t0, 10, unrecognize
+bne $t0, $zero, unrecognize
+jr $ra
 
 
 
@@ -79,6 +73,7 @@ jr $ra
 
 
 
+#convert base number to decimal
 
 base28:
 beq $t2, $t3, addsLoop
