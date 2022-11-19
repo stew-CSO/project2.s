@@ -8,7 +8,7 @@
 
 user_input: .asciiz ""
 
-result: .asciiz "Unrecognized Input" 
+result: .asciiz "Unrecognized input" 
 input: .space 1001
 
 .text
@@ -136,6 +136,16 @@ num:
 bgt $t0, 57, outOfBounds  
 sub $t0, $t0, 48
 j base28 
+
+
+
+
+#function to remove tab 
+tab:
+	addi $a0, $a0, 1
+	move $t0, $a0
+
+
 
 
 
