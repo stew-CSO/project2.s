@@ -127,13 +127,13 @@ j base28
  
 
 upperCaseChar: 
-bgt $t0, 81, outOfBounds 
+bgt $t0, 82, outOfBounds 
 sub $t0, $t0, 55
 j base28
 
 
 num:
-bgt $t0, 58, outOfBounds  
+bgt $t0, 57, outOfBounds  
 sub $t0, $t0, 48
 j base28 
 
