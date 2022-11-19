@@ -35,6 +35,13 @@ new_Start:
 	beq $t7, 32, beginner 
 
 
+
+beginning_loop:
+	add $t0, $t0, -1
+	lb $t7, ($t0)
+	jal Check_Character
+
+
 beginner: 
 	addi $a0, $a0, 1
 	move $t1, $a0
