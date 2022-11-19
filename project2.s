@@ -28,7 +28,7 @@ syscall
 
 move $s0, $a0  #move userInput into register $s0 
 add $t1, $s0, $zero
-addi $t0, $t0, 1001
+addi $s0, $s0, 1001
 
 
 new_Start:	
@@ -61,7 +61,6 @@ lb $t0, 3($s0)
 
 
 
-
 bgt $t2, 4, unrecognize 
 j exitfunction	
 
@@ -80,9 +79,9 @@ Check_Character:
 
 
 add_Character:
-	bgt $t0, 96, lowerCaseChar
-	bgt $t0, 64, upperCaseChar
-	bgt $t0, 47, num
+	bgt $t7, 96, lowerCaseChar
+	bgt $t7, 64, upperCaseChar
+	bgt $t7, 47, num
 	beq $t0, 9, trailing 
 	beq $t0, 32, trailing 
 	bne $t0, 10, outOfBounds
