@@ -127,9 +127,7 @@ lowerCaseChar:
 bgt $s1, 115, outOfBounds
 sub $s1, $s1, 87
 j addsloop
-
-outOfBounds:
-jr $ra  
+ 
 
 upperCaseChar: 
 bgt $s1, 82, outOfBounds 
