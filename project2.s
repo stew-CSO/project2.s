@@ -81,7 +81,9 @@ check:
 	jal beginning_loop
 
 
-
+trailing:
+	bne $t3, 0, unrecognized
+	jal beginning_loop
 
 
 add_Character:
