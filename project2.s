@@ -54,16 +54,16 @@ outOfBounds:
 j unrecognize 
 
 
+Check_Character:
+beq $t0, 10, unrecognize
+bne $t0, $zero, unrecognize
+jr $ra
 
 check:
 bgt $t0, 0, add_Character
 jr $ra
 
 
-Check_Character:
-beq $t0, 10, unrecognize
-bne $t0, $zero, unrecognize
-jr $ra
 
 
 
@@ -77,13 +77,12 @@ jr $ra
 
 
 #convert base number to decimal
-
 base28:
 beq $t2, $t3, addsLoop
-multu $t1, $t8
+multu $t0, $s5
 mflo $t4
 mfhi $t5
-add $t2, $t4, $t5
+add $t0, $t4, $t5
 addi $t2, 1
 bne $t2, $t3, base28
 	
@@ -91,7 +90,7 @@ bne $t2, $t3, base28
 
 addsLoop:
 sub $t2, $t2, $t2
-add $t9, $t1, $t9
+add $t9, $t0, $t9
 addi $t3, 1
 jr $ra
 
