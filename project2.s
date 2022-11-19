@@ -16,6 +16,9 @@ input: .space 1001
   
 main: # Start of code section
 
+addi $s4, 4
+
+
 addi $s5, 28
 
 li $v0, 8
@@ -90,6 +93,8 @@ add_Character:
 	bgt $t0, 96, lowerCaseChar
 	bgt $t0, 64, upperCaseChar
 	bgt $t0, 47, num
+	beq $t0, 9, trailing 
+	beq $t0, 32, trailing 
 	bne $t0, 10, outOfBounds
 	jal beginning_loop
 
@@ -111,6 +116,7 @@ addsLoop:
 	sub $t2, $t2, $t2
 	add $t9, $t0, $t9
 	addi $t3, 1
+	bgt $t3, 
 	jal beginning_loop
 
 
