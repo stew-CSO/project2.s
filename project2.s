@@ -35,6 +35,12 @@ new_Start:
 	beq $t7, 32, beginner 
 
 
+beginner: 
+	addi $a0, $a0, 1
+	move $t1, $a0
+	j new_start
+
+
 
 lb $t0, 3($s0)
 
