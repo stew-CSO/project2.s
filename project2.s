@@ -123,19 +123,19 @@ exitfunction:
 lowerCaseChar:
 bgt $s1, 115, outOfBounds
 sub $s1, $s1, 87
-j addsloop
+j base28
  
 
 upperCaseChar: 
 bgt $s1, 82, outOfBounds 
 sub $s1, $s1, 55
-j addsloop
+j base28
 
 
 num:
 bgt $s1, 59, outOfBounds  
 sub $s1, $s1, 48
-j addsloop 
+j base28 
 
 
 
