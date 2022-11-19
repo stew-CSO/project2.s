@@ -116,7 +116,8 @@ addsLoop:
 	sub $t2, $t2, $t2
 	add $t9, $t0, $t9
 	addi $t3, 1
-	bgt $t3, 
+	bgt $t3, $s4, unrecognized
+	beq $t7, $t1, exitfunction 
 	jal beginning_loop
 
 
