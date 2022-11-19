@@ -45,7 +45,9 @@ lb $t0, 1($s0)
 jal check
 lb $t0, 0($s0)
 jal check
-	
+
+j exitfunction	
+
 
 outOfBounds:
 j unrecognize 
