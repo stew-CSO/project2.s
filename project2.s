@@ -121,19 +121,19 @@ exitfunction:
 #LowerCase loop 
 
 lowerCaseChar:
-bgt $t0, 115, outOfBounds
+bgt $t0, 114, outOfBounds
 sub $t0, $t0, 87
 j base28
  
 
 upperCaseChar: 
-bgt $t0, 82, outOfBounds 
+bgt $t0, 81, outOfBounds 
 sub $t0, $t0, 55
 j base28
 
 
 num:
-bgt $t0, 59, outOfBounds  
+bgt $t0, 58, outOfBounds  
 sub $t0, $t0, 48
 j base28 
 
