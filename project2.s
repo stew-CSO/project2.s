@@ -45,7 +45,11 @@ beginning_loop:
 beginner: 
 	addi $a0, $a0, 1
 	move $t1, $a0
-	j new_start
+	j new_Start
+
+
+
+
 
 
 
@@ -71,11 +75,11 @@ outOfBounds:
 Check_Character:
 	beq $t0, 10, unrecognize
 	bne $t0, $zero, unrecognize
-	jr $ra
+	jal beginning_loop
 
 check:
 	bgt $t0, 0, add_Character
-	jr $ra
+	jal beginning_loop
 
 
 
@@ -86,7 +90,7 @@ add_Character:
 	bgt $t0, 64, upperCaseChar
 	bgt $t0, 47, num
 	bne $t0, 10, outOfBounds
-	jr $ra
+	jal beginning_loop
 
 
 
@@ -106,8 +110,7 @@ addsLoop:
 	sub $t2, $t2, $t2
 	add $t9, $t0, $t9
 	addi $t3, 1
-	jr $ra
-
+	jal beginning_loop
 
 
 
