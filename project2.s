@@ -79,10 +79,6 @@ Check_Character:
 	bge $t1, 1, add_Character
 	jal beginning_loop
 
-check:
-	bgt $t0, 0, add_Character
-	jal beginning_loop
-
 
 trailing:
 	bne $t3, 0, unrecognized
