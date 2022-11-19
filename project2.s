@@ -28,6 +28,13 @@ add $t1, $s0, $zero
 addi $t0, $t0, 1001
 
 
+new_Start:	
+	lb $t7, ($t1)
+	beq $t7, 10, unrecognize
+	beq $t7, 9, beginner
+	beq $t7, 32, beginner 
+
+
 
 lb $t0, 3($s0)
 
