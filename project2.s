@@ -40,8 +40,8 @@ new_Start:
 
 
 beginning_loop:
-	add $t0, $t0, -1
-	lb $t7, ($t0)
+	add $s0, $s0, -1
+	lb $t7, ($s0)
 	jal Check_Character
 
 
@@ -52,27 +52,12 @@ beginner:
 
 
 
-
-
-
-
-lb $t0, 3($s0)
-
-
-
-
-bgt $t2, 4, unrecognize 
-j exitfunction	
-
-
-
-
 outOfBounds:
 	j unrecognize 
 
 
 Check_Character:
-	bge $t1, 1, add_Character
+	bgt $t7, 0, add_Character
 	jal beginning_loop
 
 
