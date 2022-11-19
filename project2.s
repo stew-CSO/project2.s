@@ -73,8 +73,7 @@ outOfBounds:
 
 
 Check_Character:
-	beq $t0, 10, unrecognize
-	bne $t0, $zero, unrecognize
+	bge $t1, 1, add_Character
 	jal beginning_loop
 
 check:
