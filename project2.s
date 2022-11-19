@@ -46,6 +46,7 @@ jal check
 lb $t0, 0($s0)
 jal check
 
+bgt $t2, 4, unrecognize 
 j exitfunction	
 
 
