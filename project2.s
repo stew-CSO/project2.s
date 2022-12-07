@@ -36,6 +36,7 @@ new_Start:
 	beq $t7, 10, unrecognize
 	beq $t7, 9, beginner
 	beq $t7, 32, beginner 
+	
 
 
 
@@ -43,29 +44,31 @@ beginning_loop:
 	add $s0, $s0, -1
 	lb $t7, ($s0)
 	jal Check_Character
+	
 
 
 beginner: 
 	addi $a0, $a0, 1
 	move $t1, $a0
 	j new_Start
-
+	
 
 
 outOfBounds:
 	j unrecognize 
+	
 
 
 Check_Character:
 	bgt $t7, 0, add_Character
-	jal beginning_loop
-
+	j beginning_loop
+	
 
 
 trailing:
 	bne $t3, 0, unrecognize
 	jal beginning_loop
-
+	
 
 add_Character:
 	bgt $t7, 96, lowerCaseChar
@@ -74,8 +77,8 @@ add_Character:
 	beq $t7, 9, trailing 
 	beq $t7, 32, trailing 
 	bne $t7, 10, outOfBounds
-	jal beginning_loop
-
+	j beginning_loop
+	
 
 
 #convert base number to decimal
@@ -96,7 +99,9 @@ addsLoop:
 	addi $t3, 1
 	bgt $t3, $s4, unrecognize
 	beq $s0, $t1, exitfunction 
-	jal beginning_loop
+	jr $ra
+	
+	
 
 
 
